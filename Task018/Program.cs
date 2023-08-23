@@ -13,5 +13,5 @@ string CoordinateRange(int num)
 Console.WriteLine("Введите номер четверти");
 int number = Convert.ToInt32(Console.ReadLine());
 
-string result = CoordinateRange(number)
+string result = CoordinateRange(number);
 Console.WriteLine(result != null ? result : "Некоректный ввод!");
