@@ -13,7 +13,12 @@ bool PalindromeDefinition(int num)
 Console.WriteLine("Введите пятизначное число");
 int number = Convert.ToInt32(Console.ReadLine());
 
-// Добавить проверку на пятизначность
-
-bool result = PalindromeDefinition(number);
-Console.WriteLine(result ? "Является" : "Не является");
+if (number < 10000 || number > 99999)
+{
+    Console.WriteLine("Неверный ввод. Число должно быть пятизначным.");
+}
+else
+{
+    bool result = PalindromeDefinition(number);
+    Console.WriteLine(result ? "Является палиндромом." : "Не является палиндромом.");
+}
