@@ -21,12 +21,12 @@ int SumNumbers(int num)
 Console.WriteLine("Введите натуральное число");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int sumNumbers = SumNumbers(number);
-
 if (number < 1)
 {
     Console.WriteLine("Введено некорректное число");
     return;
 }
+
+int sumNumbers = SumNumbers(number);
 
 Console.WriteLine($"Сумму чисел от 1 до {number} = {sumNumbers}");
