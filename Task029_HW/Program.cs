@@ -1,16 +1,16 @@
 ﻿// 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
-void FillArr(int[] mass)
+void FillArr(int[] mass, int min, int max)              //Метод генерации массива из псевдослучайных чисел
 {
     int i = 0;
     while (i < mass.Length)
     {
-        mass[i] = new Random().Next(-100, 100);
+        mass[i] = new Random().Next(min, max);
         i++;
     }
 }
 
-void PrintArr(int[] mass)
+void PrintArr(int[] mass)                               //Метод печати массива
 {
     int i = 0;
     while (i < mass.Length)
@@ -27,6 +27,18 @@ void PrintArr(int[] mass)
     }
     Console.Write($"{mass[mass.Length - 1]}]");
 }
-int[] array = new int[8];
-FillArr(array);
+
+string ConsoleText(string msg)                          //Метод ввода/вывода информации
+{
+    Console.WriteLine(msg);
+    string resIn = Console.ReadLine();
+    return resIn;
+}
+
+int lenArray = Convert.ToInt32(ConsoleText("Укажите длину массива"));
+int minValue = Convert.ToInt32(ConsoleText("Укажите минимальное значение"));
+int maxValue = Convert.ToInt32(ConsoleText("Укажите максимальное значение"));
+
+int[] array = new int[lenArray];
+FillArr(array, minValue, maxValue);
 PrintArr(array);
