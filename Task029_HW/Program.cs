@@ -13,16 +13,16 @@ void FillArr(int[] mass, int min, int max)              //Метод генер�
 void PrintArr(int[] mass)                               //Метод печати массива
 {
     int i = 0;
-    while (i < mass.Length)
+    while (i < (mass.Length-1))
     {
-        Console.Write(mass[i] + " ");
+        Console.Write(mass[i] + ", ");
         i++;
     }
-    Console.Write("-> [");
+    Console.Write($"{mass[mass.Length - 1]} -> [");
     int j = 0;
     while (j < (mass.Length - 1))
     {
-        Console.Write(mass[j] + " ");
+        Console.Write(mass[j] + ", ");
         j++;
     }
     Console.Write($"{mass[mass.Length - 1]}]");
