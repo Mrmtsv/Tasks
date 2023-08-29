@@ -31,7 +31,7 @@ void PrintArr(int[] mass)                               //Метод печат�
 string ConsoleText(string msg)                          //Метод ввода/вывода информации
 {
     Console.WriteLine(msg);
-    string resIn = Console.ReadLine();
+    string resIn = System.Console.ReadLine();
     return resIn;
 }
 
