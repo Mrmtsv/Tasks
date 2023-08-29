@@ -14,8 +14,15 @@ int ExponentiationAB(int num1, int num2)
 
 Console.WriteLine("Введите число A");
 int numberA = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число B");
+Console.WriteLine("Введите натуральное число B");
 int numberB = Convert.ToInt32(Console.ReadLine());
 
-int result = ExponentiationAB(numberA, numberB);
-Console.WriteLine($"Число {numberA} в степени {numberB} равно {result}.");
+if (numberB < 1)
+{
+    Console.WriteLine("Ошибка ввода! Число B должно быть натуральным.");
+}
+else
+{
+    int result = ExponentiationAB(numberA, numberB);
+    Console.WriteLine($"Число {numberA} в степени {numberB} равно {result}.");
+}
