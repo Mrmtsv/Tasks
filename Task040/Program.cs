@@ -2,14 +2,13 @@
 
 bool ExistenceOfTriangle(int sideA, int sideB, int sideC)
 {
-    if (sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB) return true;
-    return false;
+    return sideA < sideB + sideC && sideB < sideA + sideC && sideC < sideA + sideB;
 }
 
 Console.WriteLine("Введите стороны треугольника: ");
-int A = Convert.ToInt32(Console.ReadLine());
-int B = Convert.ToInt32(Console.ReadLine());
-int C = Convert.ToInt32(Console.ReadLine());
-bool answer = ExistenceOfTriangle(A, B, C);
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+int c = Convert.ToInt32(Console.ReadLine());
+bool answer = ExistenceOfTriangle(a, b, c);
 string result = answer ? "может" : "не может";
-Console.WriteLine($"Треугольник со сторонами {A}, {B} и {C} существовать {result}");
+Console.WriteLine($"Треугольник со сторонами {a}, {b} и {c} существовать {result}");
