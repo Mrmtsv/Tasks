@@ -28,11 +28,12 @@ void PrintArr(int[] mass)                               //Метод печат�
     Console.Write($"{mass[mass.Length - 1]}]");
 }
 
-string ConsoleText(string msg)                          //Метод ввода/вывода информации
+int ConsoleText(string msg)                          //Метод ввода/вывода информации
 {
     Console.WriteLine(msg);
-    string resIn = System.Console.ReadLine();
-    return resIn;
+    string ReadIn = Console.ReadLine();
+    int resReadIn = int.Parse(ReadIn);
+    return resReadIn;
 }
 
 int lenArray = Convert.ToInt32(ConsoleText("Укажите длину массива"));
