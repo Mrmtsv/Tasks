@@ -5,7 +5,7 @@ void FillArr(int[] mass, int min, int max)              //Метод генер�
     int i = 0;
     while (i < mass.Length)
     {
-        mass[i] = new Random().Next(min, max);
+        mass[i] = new Random().Next(min, max + 1);
         i++;
     }
 }
