@@ -20,7 +20,7 @@ void PrintArr(int[] mass)                               //Метод печат�
         Console.Write(mass[i] + ", ");
         i++;
     }
-    Console.Write($"{mass[mass.Length - 1]}] -> ");
+    Console.Write($"{mass[mass.Length - 1]}]");
 }
 
 int ConsoleText(string msg)                          //Метод ввода/вывода информации
@@ -47,6 +47,7 @@ int maxValue = Convert.ToInt32(ConsoleText("Укажите максимальн�
 
 int[] array = new int[lenArray];
 FillArr(array, minValue, maxValue);
+Console.Write($"Сумма элементов массива ");
 PrintArr(array);
-//int resSummOdd = SummOddNums(array);
-//Console.Write($"Сумма элементов массива {}, стоящих на нечетных позициях, равна {resSummOdd});
+int resSummOdd = SummOddNums(array);
+Console.Write($", стоящих на нечетных позициях, равна {resSummOdd}");
