@@ -12,7 +12,6 @@ double[] CreateArrayRndDouble(int size, int minimum, int maximum)      //Мет�
     return arr;
 }
 
-
 void PrintArr(double[] mass)                               //Метод печати массива
 {
     Console.Write($"[");
@@ -41,7 +40,7 @@ double[] MaxMinArray(double[] mass)                  //Метод нахожде
         if (mass[i] > max) max = mass[i];
         if (mass[i] < min) min = mass[i];
     }
-    double[] arrayMaxMin = {max, min};
+    double[] arrayMaxMin = { max, min };
     return arrayMaxMin;
 }
 
