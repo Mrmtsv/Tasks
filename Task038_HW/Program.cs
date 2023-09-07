@@ -15,7 +15,7 @@ double[] CreateArrayRndDouble(int size, int minimum, int maximum)      //Мет�
 void PrintArr(double[] mass)                               //Метод печати массива
 {
     Console.Write($"[");
-    for (int i = 0; i < mass.Length; i++)
+    for (int i = 0; i < mass.Length - 1; i++)
     {
         if (i < mass.Length - 1) Console.Write($"{mass[i]}, ");
         else Console.Write($"{mass[i]}");
@@ -31,10 +31,10 @@ int ConsoleText(string msg)                          //Метод ввода/в�
     return resReadIn;
 }
 
-double[] MaxMinArray(double[] mass)                  //Метод нахождения максимального и минимального элемента массива
+double[] MaxMinArray(double[] mass, int minimum, int maximum)                  //Метод нахождения максимального и минимального элемента массива
 {
-    double max = 0.0;
-    double min = 0.0;
+    double max = maximum;
+    double min = minimum;
     for (int i = 0; i < mass.Length; i++)
     {
         if (mass[i] > max) max = mass[i];
@@ -51,5 +51,5 @@ int maxValue = Convert.ToInt32(ConsoleText("Укажите максимальн�
 double[] array = CreateArrayRndDouble(lenArray, minValue, maxValue);
 Console.Write($"Разница между максимальным и минимальным элементами массива ");
 PrintArr(array);
-double[] resMaxMinArray = MaxMinArray(array);
+double[] resMaxMinArray = MaxMinArray(array, minValue, maxValue);
 Console.Write($" составляет {resMaxMinArray[0]} - {resMaxMinArray[1]} = {Math.Round(resMaxMinArray[0] - resMaxMinArray[1], 2)}.");
