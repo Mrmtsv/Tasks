@@ -1,26 +1,27 @@
 ﻿// 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму 
 //элементов, стоящих на нечётных позициях.
 
-void FillArr(int[] mass, int min, int max)              //Метод генерации массива из псевдослучайных чисел
+int[] CreateArrayRndInt(int size, int min, int max)             //Метод генерации массива из псевдослучайных чисел
 {
-    int i = 0;
-    while (i < mass.Length)
+    int[] arr = new int[size];
+    Random rnd = new Random();
+
+    for (int i = 0; i < arr.Length; i++)
     {
-        mass[i] = new Random().Next(min, max + 1);
-        i++;
+        arr[i] = rnd.Next(min, max + 1);
     }
+    return arr;
 }
 
-void PrintArr(int[] mass)                               //Метод печати массива
+void PrintArray(int[] arr)                      //Метод печати массива
 {
-    Console.Write($"[");
-    int i = 0;
-    while (i < (mass.Length - 1))
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(mass[i] + ", ");
-        i++;
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
     }
-    Console.Write($"{mass[mass.Length - 1]}]");
+    Console.Write("]");
 }
 
 int ConsoleText(string msg)                          //Метод ввода/вывода информации
@@ -45,9 +46,8 @@ int lenArray = Convert.ToInt32(ConsoleText("Укажите длину масси
 int minValue = Convert.ToInt32(ConsoleText("Укажите минимальное значение массива"));
 int maxValue = Convert.ToInt32(ConsoleText("Укажите максимальное значение массива"));
 
-int[] array = new int[lenArray];
-FillArr(array, minValue, maxValue);
+int[] array = CreateArrayRndInt(lenArray, minValue, maxValue);
 Console.Write($"Сумма элементов массива ");
-PrintArr(array);
+PrintArray(array);
 int resSummOdd = SummOddNums(array);
-Console.Write($", стоящих на нечетных позициях, равна {resSummOdd}");
+Console.Write($", стоящих на нечетных позициях, равна {resSummOdd}.");

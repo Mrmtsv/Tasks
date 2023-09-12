@@ -1,26 +1,27 @@
 ﻿//34: Задайте массив заполненный случайными положительными трёхзначными 
 //числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-void FillArr(int[] mass)              //Метод генерации массива из псевдослучайных чисел
+int[] CreateArrayRndInt(int size)               //Метод генерации массива из псевдослучайных чисел
 {
-    int i = 0;
-    while (i < mass.Length)
+    int[] arr = new int[size];
+    Random rnd = new Random();
+
+    for (int i = 0; i < arr.Length; i++)
     {
-        mass[i] = new Random().Next(100, 1000);
-        i++;
+        arr[i] = rnd.Next(100, 1000);
     }
+    return arr;
 }
 
-void PrintArr(int[] mass)                               //Метод печати массива
+void PrintArray(int[] arr)                      //Метод печати массива
 {
-    Console.Write($"[");
-    int i = 0;
-    while (i < (mass.Length - 1))
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(mass[i] + ", ");
-        i++;
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
     }
-    Console.Write($"{mass[mass.Length - 1]}] -> ");
+    Console.Write("]");
 }
 
 int ConsoleText(string msg)                          //Метод ввода/вывода информации
@@ -43,8 +44,8 @@ int CountEvenNumsArray(int[] mass)                  //Метод определ�
 
 int lenArray = Convert.ToInt32(ConsoleText("Укажите длину массива"));
 
-int[] array = new int[lenArray];
-FillArr(array);
-PrintArr(array);
+int[] array = CreateArrayRndInt(lenArray);
 int resCountEven = CountEvenNumsArray(array);
-Console.Write(resCountEven);
+Console.Write($"Количество четных чисел в массиве ");
+PrintArray(array);
+Console.Write($" равно {resCountEven}.");

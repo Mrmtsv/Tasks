@@ -33,8 +33,8 @@ int ConsoleText(string msg)                          //Метод ввода/в�
 
 double[] MaxMinArray(double[] mass, int minimum, int maximum)                  //Метод нахождения максимального и минимального элемента массива
 {
-    double max = maximum;
-    double min = minimum;
+    double max = minimum;
+    double min = maximum;
     for (int i = 0; i < mass.Length; i++)
     {
         if (mass[i] > max) max = mass[i];
