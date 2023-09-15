@@ -40,6 +40,3 @@ void PrintArray(double[,] matrix)
 
 double[,] matrix = CreateRandomMatrix(5, 5, 0, 10);
 PrintArray(matrix);
-//Console.WriteLine();
-//int sumElements = SumBothCommonIndexes(matrix);
-//Console.WriteLine(sumElements);
