@@ -3,13 +3,12 @@
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
-    //                        0       1
-    int[,] matrix = new int[rows, columns]; // rows = 3, columns = 4
+    int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); i++) // 3
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++) // 4
+        for (int j = 0; j < matrix.GetLength(1); j++) 
         {
             matrix[i, j] = rnd.Next(min, max + 1);
         }
@@ -32,7 +31,7 @@ void PrintArray(int[,] arr)
     }
 }
 
-void SortNumsRowsInDescending(int[,] matrix, int minNum)
+void SortNumsRowsInDescending(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -67,6 +66,6 @@ int maxValue = Convert.ToInt32(ConsoleText("Укажите максимальн�
 
 int[,] matrix = CreateMatrixRndInt(rowMatrix, columnMatrix, minValue, maxValue);
 PrintArray(matrix);
-SortNumsRowsInDescending(matrix, minValue);
+SortNumsRowsInDescending(matrix);
 Console.WriteLine();
 PrintArray(matrix);
