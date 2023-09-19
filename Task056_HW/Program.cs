@@ -78,4 +78,4 @@ PrintArray(matrix);
 int[] array = ArraySumNumsRows(matrix);
 int res = FindingSmallNumArray(array);
 Console.WriteLine();
-Console.WriteLine(res);
+Console.WriteLine($"Номер строки с наименьшей суммой элементов: {res} строка.");
