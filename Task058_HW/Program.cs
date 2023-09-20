@@ -53,6 +53,11 @@ int[,] MultiplicationMatrix(int[,] matrixA, int[,] matrixB)
     return matrix;
 }
 
+bool IsSquareMatrix(int[,] matrixA, int[,] matrixB)
+{
+    return matrixA.GetLength(1) == matrixB.GetLength(0);
+}
+
 int ConsoleText(string msg)                          //Метод ввода/вывода информации
 {
     Console.WriteLine(msg);
@@ -61,16 +66,23 @@ int ConsoleText(string msg)                          //Метод ввода/в�
     return resReadIn;
 }
 
-int column1row2Matrix = Convert.ToInt32(ConsoleText("Укажите количество столбцов первой матрицы/строк второй матрицы"));
+int columnMatrix1 = Convert.ToInt32(ConsoleText("Укажите количество столбцов первой матрицы"));
 int rowMatrix1 = Convert.ToInt32(ConsoleText("Укажите количество строк первой матрицы"));
 int minValue1 = Convert.ToInt32(ConsoleText("Укажите минимальное значение первой матрицы"));
 int maxValue1 = Convert.ToInt32(ConsoleText("Укажите максимальное значение первой матрицы"));
 int columnMatrix2 = Convert.ToInt32(ConsoleText("Укажите количество столбцов второй матрицы"));
+int rowMatrix2 = Convert.ToInt32(ConsoleText("Укажите количество строк второй матрицы"));
 int minValue2 = Convert.ToInt32(ConsoleText("Укажите минимальное значение второй матрицы"));
 int maxValue2 = Convert.ToInt32(ConsoleText("Укажите максимальное значение второй матрицы"));
 
-int[,] matrix1 = CreateMatrixRndInt(rowMatrix1, column1row2Matrix, minValue1, maxValue1);
-int[,] matrix2 = CreateMatrixRndInt(column1row2Matrix, columnMatrix2, minValue2, maxValue2);
+int[,] matrix1 = CreateMatrixRndInt(rowMatrix1, columnMatrix1, minValue1, maxValue1);
+int[,] matrix2 = CreateMatrixRndInt(rowMatrix2, columnMatrix2, minValue2, maxValue2);
+
+if (!IsSquareMatrix(matrix1, matrix2))
+{
+    Console.WriteLine("Матрицы не являются совместимыми! Их произведение не возможно!");
+    return;
+}
 
 Console.WriteLine("Произведение матриц ");
 PrintArray(matrix1);
