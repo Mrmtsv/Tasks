@@ -36,7 +36,7 @@ int[,,] CreateMatrix3DTwoDigitNonRepeatingNumInt(int rows, int columns, int dept
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
                 matrix[i, j, k] = num;
-                num += 1;
+                num++;
             }
         }
     }
